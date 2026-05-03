@@ -1,0 +1,69 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 26, 46, 0);
+    color: #ffffff;
+}
+
+/* container geral */
+.modules-left,
+.modules-center,
+.modules-right {
+    margin: 6px 8px;
+}
+
+/* estilo base de cada módulo (beacon) */
+#workspaces button,
+#clock,
+#pulseaudio,
+#battery,
+#network,
+#tray {
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 4px 14px;
+    margin: 0 3px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: background 0.2s ease;
+}
+
+/* workspace ativo */
+#workspaces button.active {
+    background: rgba(139, 92, 246, 0.85);
+    border-color: rgba(139, 92, 246, 0.6);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+}
+
+/* workspace vazio (mais apagado) */
+#workspaces button.empty {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.10);
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* hover em qualquer módulo */
+#workspaces button:hover,
+#pulseaudio:hover,
+#network:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* bateria carregando */
+#battery.charging {
+    background: rgba(99, 210, 100, 0.25);
+    border-color: rgba(99, 210, 100, 0.45);
+    color: #7dea7e;
+}
+
+/* clock centralizado */
+#clock {
+    padding: 4px 20px;
+}
