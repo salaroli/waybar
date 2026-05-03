@@ -66,3 +66,13 @@ tooltip label {
   font-family: "JetBrains Mono", monospace;
   font-size: 12px;
 }
+
+/* As cores do calendário são definidas via Pango markup no config,
+   pois o tooltip renderiza texto simples sem widgets GTK individuais.
+   Edite os valores <span color='...'> em cada chave abaixo:
+     "months"   → nome dos meses         (padrão: #bd93f9 — Dracula purple)
+     "days"     → números dos dias       (padrão: #f8f8f2 — Dracula foreground)
+     "weeks"    → números das semanas    (padrão: #6272a4 — Dracula comment)
+     "weekdays" → cabeçalho Seg-Dom      (padrão: #8be9fd — Dracula cyan)
+     "today"    → dia atual              (padrão: #ff79c6 — Dracula pink)
+*/
