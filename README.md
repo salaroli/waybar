@@ -120,20 +120,40 @@ Ao clicar nos módulos de volume e bluetooth, a waybar abre `pavucontrol` e `blu
 
 ```ini
 # pavucontrol (controle de volume)
-windowrulev2 = float, class:^(pavucontrol)$
-windowrulev2 = center, class:^(pavucontrol)$
+windowrule {
+    name = float-pavucontrol
+    match:class = ^org.pulseaudio.pavucontrol$
+    float = yes
+    center = yes
+}
 
 # blueman-manager (gerenciador de bluetooth)
-windowrulev2 = float, class:^(blueman-manager)$
-windowrulev2 = center, class:^(blueman-manager)$
+windowrule {
+    name = float-blueman-manager
+    match:class = ^blueman-manager$
+    float = yes
+    center = yes
+}
 ```
 
-As regras `float` e `center` são suficientes — os programas abrem no tamanho padrão deles automaticamente. Se quiser forçar um tamanho específico, adicione `size` antes do `center`:
+As regras `float` e `center` são suficientes — os programas abrem no tamanho padrão deles automaticamente. Se quiser forçar um tamanho específico, adicione `size` ao bloco:
 
 ```ini
-# Tamanho fixo opcional (largura altura em pixels)
-windowrulev2 = size 700 450, class:^(pavucontrol)$
-windowrulev2 = size 600 400, class:^(blueman-manager)$
+windowrule {
+    name = float-pavucontrol
+    match:class = ^org.pulseaudio.pavucontrol$
+    float = yes
+    center = yes
+    size = 700 450
+}
+
+windowrule {
+    name = float-blueman-manager
+    match:class = ^blueman-manager$
+    float = yes
+    center = yes
+    size = 600 400
+}
 ```
 
 Após editar o arquivo, recarregue o Hyprland com `Super + Shift + R` ou reinicie a sessão.
