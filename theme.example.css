@@ -1,16 +1,9 @@
+/* Copie este arquivo para theme.css e personalize os valores abaixo.
+   Cada bloco sobrescreve o estilo base do style.css. */
+
 * {
-  border: none;
-  border-radius: 0;
   font-family: "JetBrains Mono", monospace;
   font-size: 13px;
-  min-height: 0;
-  padding: 0;
-  margin: 0;
-}
-
-window#waybar {
-  background: transparent;
-  color: #ffffff;
 }
 
 .modules-left,
@@ -31,12 +24,7 @@ window#waybar {
 #bluetooth,
 #privacy,
 #tray {
-  background: transparent;
-  border: none;
-  padding: 4px 10px;
-  margin: 0;
   color: rgba(255, 255, 255, 0.85);
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
 #workspaces button.active {
@@ -58,13 +46,6 @@ window#waybar {
   background: rgba(255, 255, 255, 0.1);
 }
 
-#cpu         { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#clock       { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#pulseaudio  { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#workspaces button:last-child { padding-right: 14px; border-radius: 0 12px 12px 0; }
-#tray        { padding-right: 14px; border-radius: 0 12px 12px 0; }
-#privacy     { padding-right: 14px; border-radius: 0 12px 12px 0; }
-
 #network.disconnected {
   color: #e06c75;
 }
@@ -72,5 +53,3 @@ window#waybar {
 #battery.charging {
   color: #7dea7e;
 }
-
-@import "theme.css";
