@@ -20,7 +20,6 @@ window#waybar {
   background: rgba(128, 128, 128, 0.7);
   border-radius: 12px;
   margin: 5px 6px;
-  overflow: hidden;
 }
 
 /* módulos individuais: transparentes, sem borda própria */
@@ -66,13 +65,13 @@ window#waybar {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* extremidades: padding substitui o container padding */
-#cpu         { padding-left: 14px; }
-#clock       { padding-left: 14px; }
-#network     { padding-left: 14px; }
-#workspaces button:last-child { padding-right: 14px; }
-#tray        { padding-right: 14px; }
-#privacy     { padding-right: 14px; }
+/* extremidades: padding e border-radius para o hover não vazar da pílula */
+#cpu         { padding-left: 14px; border-radius: 12px 0 0 12px; }
+#clock       { padding-left: 14px; border-radius: 12px 0 0 12px; }
+#network     { padding-left: 14px; border-radius: 12px 0 0 12px; }
+#workspaces button:last-child { padding-right: 14px; border-radius: 0 12px 12px 0; }
+#tray        { padding-right: 14px; border-radius: 0 12px 12px 0; }
+#privacy     { padding-right: 14px; border-radius: 0 12px 12px 0; }
 
 /* rede desconectada */
 #network.disconnected {
