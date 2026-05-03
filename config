@@ -1,18 +1,22 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 20,
+    "height": 30,
     "modules-left": [
+      "cpu",
+      "memory",
       "hyprland/workspaces"
     ],
     "modules-center": [
-      "clock"
+      "clock",
+      "tray"
     ],
     "modules-right": [
-      "pulseaudio",
       "network",
-      "sway/language",
-      "tray"
+      "pulseaudio",
+      "bluetooth",
+      "hyprland/language",
+      "privacy"
     ],
 
     "hyprland/workspaces": {
@@ -21,7 +25,7 @@
     },
 
     "clock": {
-        "format": "{:%A, %B %d, %Y (%R)}  ",
+        "format": "󰃭 {:%A, %B %d, %Y  %R}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
                     "mode"          : "year",
@@ -45,32 +49,28 @@
 
     "network": {
         "interface": "enp8s0",
-        "format": "{ifname}",
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-        "max-length": 50
+        "format": "󰈀",
+        "format-wifi": "󰖩",
+        "format-ethernet": "󰊗",
+        "format-disconnected": "󰖪",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} — {ipaddr}/{cidr}",
+        "tooltip-format-disconnected": "Desconectado"
     },
 
     "pulseaudio": {
         "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": "",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "󰝟",
         "format-icons": {
-            "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-            "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "phone-muted": "",
-            "portable": "",
-            "car": "",
-            "default": ["", ""]
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
         },
         "scroll-step": 1,
         "on-click": "pavucontrol",
@@ -78,28 +78,30 @@
     },
 
     "bluetooth": {
-        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-        "format": " {status}",
-        "format-disabled": "", // an empty format will hide the module
-        "format-connected": " {num_connections} connected",
-        "tooltip-format": "{controller_alias}\t{controller_address}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+        "format": "󰂯",
+        "format-disabled": "",
+        "format-connected": "󰂱",
+        "tooltip-format": "{controller_alias}  {controller_address}",
+        "tooltip-format-connected": "{controller_alias}  {controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}  {device_address}"
     },
+
     "cpu": {
         "interval": 10,
-        "format": "{}% ",
+        "format": "󰍛 {}%",
         "max-length": 10
     },
 
-    "sway/language": {
-        "format": "{long}",
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    "hyprland/language": {
+        "format": "{short}",
+        "keyboard-name": "at-translated-set-2-keyboard"
     },
+
     "memory": {
         "interval": 30,
-        "format": "{used:0.1f}G/{total:0.1f}G "
+        "format": "󰘚 {used:0.1f}G/{total:0.1f}G"
     },
+
     "privacy": {
       "modules": [
         {
