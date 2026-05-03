@@ -1,8 +1,10 @@
+@import "theme.css";
+
 * {
   border: none;
   border-radius: 0;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 13px;
+  font-family: var(--font-family, "JetBrains Mono", monospace);
+  font-size: var(--font-size, 13px);
   min-height: 0;
   padding: 0;
   margin: 0;
@@ -17,9 +19,9 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: rgba(128, 128, 128, 0.7);
-  border-radius: 12px;
-  margin: 5px 6px;
+  background: var(--pill-bg, rgba(128, 128, 128, 0.7));
+  border-radius: var(--pill-radius, 12px);
+  margin: var(--pill-margin, 5px 6px);
 }
 
 /* módulos individuais: transparentes, sem borda própria */
@@ -37,20 +39,20 @@ window#waybar {
   border: none;
   padding: 4px 10px;
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-color, rgba(255, 255, 255, 0.85));
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* workspace ativo — destaque roxo dentro da pílula */
+/* workspace ativo — destaque dentro da pílula */
 #workspaces button.active {
-  background: rgba(139, 92, 246, 0.75);
-  color: #ffffff;
-  box-shadow: 0 0 8px rgba(139, 92, 246, 0.45);
+  background: var(--workspace-active-bg, rgba(139, 92, 246, 0.75));
+  color: var(--workspace-active-color, #ffffff);
+  box-shadow: 0 0 8px var(--workspace-active-shadow, rgba(139, 92, 246, 0.45));
 }
 
 /* workspace vazio */
 #workspaces button.empty {
-  color: rgba(255, 255, 255, 0.25);
+  color: var(--workspace-empty-color, rgba(255, 255, 255, 0.25));
 }
 
 /* hover dentro da pílula */
@@ -60,23 +62,23 @@ window#waybar {
 #pulseaudio:hover,
 #network:hover,
 #bluetooth:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--hover-bg, rgba(255, 255, 255, 0.1));
 }
 
 /* extremidades: padding e border-radius para o hover não vazar da pílula */
-#cpu         { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#clock       { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#pulseaudio  { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#workspaces button:last-child { padding-right: 14px; border-radius: 0 12px 12px 0; }
-#tray        { padding-right: 14px; border-radius: 0 12px 12px 0; }
-#privacy     { padding-right: 14px; border-radius: 0 12px 12px 0; }
+#cpu         { padding-left: 14px; border-radius: var(--pill-radius, 12px) 0 0 var(--pill-radius, 12px); }
+#clock       { padding-left: 14px; border-radius: var(--pill-radius, 12px) 0 0 var(--pill-radius, 12px); }
+#pulseaudio  { padding-left: 14px; border-radius: var(--pill-radius, 12px) 0 0 var(--pill-radius, 12px); }
+#workspaces button:last-child { padding-right: 14px; border-radius: 0 var(--pill-radius, 12px) var(--pill-radius, 12px) 0; }
+#tray        { padding-right: 14px; border-radius: 0 var(--pill-radius, 12px) var(--pill-radius, 12px) 0; }
+#privacy     { padding-right: 14px; border-radius: 0 var(--pill-radius, 12px) var(--pill-radius, 12px) 0; }
 
 /* rede desconectada */
 #network.disconnected {
-  color: #e06c75;
+  color: var(--network-disconnected-color, #e06c75);
 }
 
 /* bateria carregando */
 #battery.charging {
-  color: #7dea7e;
+  color: var(--battery-charging-color, #7dea7e);
 }

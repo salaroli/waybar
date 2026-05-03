@@ -1,0 +1,22 @@
+/* Copie este arquivo para theme.css e personalize as variáveis abaixo */
+
+:root {
+  --font-family: "JetBrains Mono", monospace;
+  --font-size: 13px;
+
+  --pill-bg: rgba(128, 128, 128, 0.7);
+  --pill-radius: 12px;
+  --pill-margin: 5px 6px;
+
+  --text-color: rgba(255, 255, 255, 0.85);
+
+  --workspace-active-bg: rgba(139, 92, 246, 0.75);
+  --workspace-active-color: #ffffff;
+  --workspace-active-shadow: rgba(139, 92, 246, 0.45);
+  --workspace-empty-color: rgba(255, 255, 255, 0.25);
+
+  --hover-bg: rgba(255, 255, 255, 0.1);
+
+  --network-disconnected-color: #e06c75;
+  --battery-charging-color: #7dea7e;
+}
