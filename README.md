@@ -114,21 +114,49 @@ hardware.bluetooth.enable = true;
 git clone https://github.com/salaroli/waybar ~/.config/waybar
 ```
 
-## Controle de volume com pavucontrol
+## Janelas flutuantes no Hyprland
 
-O `pavucontrol` abre ao clicar no módulo de volume e permite:
-- Ajustar volume de saída e entrada separadamente
-- Selecionar dispositivos de output (caixas, fones, HDMI)
-- Selecionar dispositivos de input (microfones)
-- Ver e controlar o volume por aplicativo
+Ao clicar nos módulos de volume e bluetooth, a waybar abre `pavucontrol` e `blueman-manager` respectivamente. Para que essas janelas abram sempre no centro da tela, flutuando, adicione as regras abaixo ao seu `~/.config/hypr/hyprland.conf`:
 
-Para abrir como janela flutuante no Hyprland, adicione ao `hyprland.conf`:
+```ini
+# pavucontrol (controle de volume)
+windowrule {
+    name = float-pavucontrol
+    match:class = ^org.pulseaudio.pavucontrol$
+    float = yes
+    center = yes
+}
 
+# blueman-manager (gerenciador de bluetooth)
+windowrule {
+    name = float-blueman-manager
+    match:class = ^blueman-manager$
+    float = yes
+    center = yes
+}
 ```
-windowrulev2 = float, class:^(pavucontrol)$
-windowrulev2 = size 700 450, class:^(pavucontrol)$
-windowrulev2 = center, class:^(pavucontrol)$
+
+As regras `float` e `center` são suficientes — os programas abrem no tamanho padrão deles automaticamente. Se quiser forçar um tamanho específico, adicione `size` ao bloco:
+
+```ini
+windowrule {
+    name = float-pavucontrol
+    match:class = ^org.pulseaudio.pavucontrol$
+    float = yes
+    center = yes
+    size = 700 450
+}
+
+windowrule {
+    name = float-blueman-manager
+    match:class = ^blueman-manager$
+    float = yes
+    center = yes
+    size = 600 400
+}
 ```
+
+Após editar o arquivo, recarregue o Hyprland com `Super + Shift + R` ou reinicie a sessão.
 
 ## Interface de rede
 
