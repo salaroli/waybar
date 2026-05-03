@@ -12,10 +12,9 @@
       "tray"
     ],
     "modules-right": [
-      "network",
       "pulseaudio",
+      "network",
       "bluetooth",
-      "hyprland/language",
       "privacy"
     ],
 
@@ -49,10 +48,10 @@
 
     "network": {
         "interface": "enp8s0",
-        "format": "󰈀",
+        "format": "󰈁",
         "format-wifi": "󰖩",
-        "format-ethernet": "󰊗",
-        "format-disconnected": "󰖪",
+        "format-ethernet": "󰈁",
+        "format-disconnected": "󰤭",
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname} — {ipaddr}/{cidr}",
@@ -80,21 +79,17 @@
     "bluetooth": {
         "format": "󰂯",
         "format-disabled": "",
-        "format-connected": "󰂱",
+        "format-connected": "󰂱 {device_alias}",
         "tooltip-format": "{controller_alias}  {controller_address}",
         "tooltip-format-connected": "{controller_alias}  {controller_address}\n\n{device_enumerate}",
-        "tooltip-format-enumerate-connected": "{device_alias}  {device_address}"
+        "tooltip-format-enumerate-connected": "{device_alias}  {device_address}",
+        "on-click": "blueman-manager"
     },
 
     "cpu": {
         "interval": 10,
         "format": "󰍛 {}%",
         "max-length": 10
-    },
-
-    "hyprland/language": {
-        "format": "{short}",
-        "keyboard-name": "at-translated-set-2-keyboard"
     },
 
     "memory": {

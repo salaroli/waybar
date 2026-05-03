@@ -31,7 +31,6 @@ window#waybar {
 #battery,
 #network,
 #bluetooth,
-#language,
 #privacy,
 #tray {
   background: transparent;
@@ -60,15 +59,14 @@ window#waybar {
 #memory:hover,
 #pulseaudio:hover,
 #network:hover,
-#bluetooth:hover,
-#language:hover {
+#bluetooth:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
 /* extremidades: padding e border-radius para o hover não vazar da pílula */
 #cpu         { padding-left: 14px; border-radius: 12px 0 0 12px; }
 #clock       { padding-left: 14px; border-radius: 12px 0 0 12px; }
-#network     { padding-left: 14px; border-radius: 12px 0 0 12px; }
+#pulseaudio  { padding-left: 14px; border-radius: 12px 0 0 12px; }
 #workspaces button:last-child { padding-right: 14px; border-radius: 0 12px 12px 0; }
 #tray        { padding-right: 14px; border-radius: 0 12px 12px 0; }
 #privacy     { padding-right: 14px; border-radius: 0 12px 12px 0; }
