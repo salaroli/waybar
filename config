@@ -15,7 +15,7 @@
       "network",
       "pulseaudio",
       "bluetooth",
-      "sway/language",
+      "hyprland/language",
       "privacy"
     ],
 
@@ -96,9 +96,9 @@
         "max-length": 10
     },
 
-    "sway/language": {
-        "format": "{long}",
-        "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+    "hyprland/language": {
+        "format": "{}",
+        "keyboard-name": "at-translated-set-2-keyboard"
     },
     "memory": {
         "interval": 30,
