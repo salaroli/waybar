@@ -3,16 +3,20 @@
     "position": "top",
     "height": 20,
     "modules-left": [
+      "cpu",
+      "memory",
       "hyprland/workspaces"
     ],
     "modules-center": [
-      "clock"
+      "clock",
+      "tray"
     ],
     "modules-right": [
-      "pulseaudio",
       "network",
+      "pulseaudio",
+      "bluetooth",
       "sway/language",
-      "tray"
+      "privacy"
     ],
 
     "hyprland/workspaces": {

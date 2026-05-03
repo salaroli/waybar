@@ -23,9 +23,14 @@ window#waybar {
 /* estilo base de cada módulo (beacon) */
 #workspaces button,
 #clock,
+#cpu,
+#memory,
 #pulseaudio,
 #battery,
 #network,
+#bluetooth,
+#language,
+#privacy,
 #tray {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -53,8 +58,12 @@ window#waybar {
 
 /* hover em qualquer módulo */
 #workspaces button:hover,
+#cpu:hover,
+#memory:hover,
 #pulseaudio:hover,
-#network:hover {
+#network:hover,
+#bluetooth:hover,
+#language:hover {
   background: rgba(255, 255, 255, 0.18);
 }
 
