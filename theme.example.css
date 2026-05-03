@@ -53,3 +53,16 @@
 #battery.charging {
   color: #7dea7e;
 }
+
+tooltip {
+  background: rgba(20, 18, 30, 0.95);
+  border: 1px solid rgba(139, 92, 246, 0.5);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+tooltip label {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+}
