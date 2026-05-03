@@ -9,18 +9,21 @@
 }
 
 window#waybar {
-  background: rgba(26, 26, 46, 0);
+  background: transparent;
   color: #ffffff;
 }
 
-/* container geral */
+/* cada seção é uma pílula única */
 .modules-left,
 .modules-center,
 .modules-right {
-  margin: 6px 8px;
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 12px;
+  margin: 5px 6px;
+  padding: 0 4px;
 }
 
-/* estilo base de cada módulo (beacon) */
+/* módulos individuais: transparentes, sem borda própria */
 #workspaces button,
 #clock,
 #cpu,
@@ -32,31 +35,28 @@ window#waybar {
 #language,
 #privacy,
 #tray {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 10px;
-  padding: 4px 14px;
-  margin: 0 3px;
+  background: transparent;
+  border: none;
+  padding: 4px 10px;
+  margin: 0;
   color: rgba(255, 255, 255, 0.85);
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-/* workspace ativo */
+/* workspace ativo — destaque roxo dentro da pílula */
 #workspaces button.active {
-  background: rgba(139, 92, 246, 0.85);
-  border-color: rgba(139, 92, 246, 0.6);
+  background: rgba(139, 92, 246, 0.75);
+  border-radius: 8px;
   color: #ffffff;
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.45);
 }
 
-/* workspace vazio (mais apagado) */
+/* workspace vazio */
 #workspaces button.empty {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.1);
   color: rgba(255, 255, 255, 0.25);
 }
 
-/* hover em qualquer módulo */
+/* hover dentro da pílula */
 #workspaces button:hover,
 #cpu:hover,
 #memory:hover,
@@ -64,17 +64,16 @@ window#waybar {
 #network:hover,
 #bluetooth:hover,
 #language:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* rede desconectada */
+#network.disconnected {
+  color: #e06c75;
 }
 
 /* bateria carregando */
 #battery.charging {
-  background: rgba(99, 210, 100, 0.25);
-  border-color: rgba(99, 210, 100, 0.45);
   color: #7dea7e;
-}
-
-/* clock centralizado */
-#clock {
-  padding: 4px 20px;
 }
