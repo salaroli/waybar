@@ -48,9 +48,9 @@
 
     "network": {
         "interface": "enp8s0",
-        "format": "󰛳",
+        "format": "󰈁",
         "format-wifi": "󰖩",
-        "format-ethernet": "󰊗",
+        "format-ethernet": "󰈁",
         "format-disconnected": "󰤭",
         "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
