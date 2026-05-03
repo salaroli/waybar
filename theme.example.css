@@ -1,22 +1,55 @@
-/* Copie este arquivo para theme.css e personalize as variáveis abaixo */
+/* Copie este arquivo para theme.css e personalize os valores abaixo.
+   Cada bloco sobrescreve o estilo base do style.css. */
 
-:root {
-  --font-family: "JetBrains Mono", monospace;
-  --font-size: 13px;
+* {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+}
 
-  --pill-bg: rgba(128, 128, 128, 0.7);
-  --pill-radius: 12px;
-  --pill-margin: 5px 6px;
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(128, 128, 128, 0.7);
+  border-radius: 12px;
+  margin: 5px 6px;
+}
 
-  --text-color: rgba(255, 255, 255, 0.85);
+#workspaces button,
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#battery,
+#network,
+#bluetooth,
+#privacy,
+#tray {
+  color: rgba(255, 255, 255, 0.85);
+}
 
-  --workspace-active-bg: rgba(139, 92, 246, 0.75);
-  --workspace-active-color: #ffffff;
-  --workspace-active-shadow: rgba(139, 92, 246, 0.45);
-  --workspace-empty-color: rgba(255, 255, 255, 0.25);
+#workspaces button.active {
+  background: rgba(139, 92, 246, 0.75);
+  color: #ffffff;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.45);
+}
 
-  --hover-bg: rgba(255, 255, 255, 0.1);
+#workspaces button.empty {
+  color: rgba(255, 255, 255, 0.25);
+}
 
-  --network-disconnected-color: #e06c75;
-  --battery-charging-color: #7dea7e;
+#workspaces button:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#network:hover,
+#bluetooth:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+#network.disconnected {
+  color: #e06c75;
+}
+
+#battery.charging {
+  color: #7dea7e;
 }
