@@ -1,6 +1,6 @@
 /* Copie este arquivo para theme.css e personalize as variáveis abaixo */
 
-:root {
+* {
   --font-family: "JetBrains Mono", monospace;
   --font-size: 13px;
 
