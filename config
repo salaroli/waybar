@@ -47,7 +47,7 @@
     },
 
     "network": {
-        "interface": "enp8s0",
+        "interface": "enp42s0",
         "format": "󰈁",
         "format-wifi": "󰖩",
         "format-ethernet": "󰈁",
