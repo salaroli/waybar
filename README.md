@@ -165,12 +165,5 @@ O módulo detecta automaticamente o tipo de conexão:
 - `󰖩` — Wi-Fi conectado
 - `󰤭` — Desconectado (ícone fica vermelho via CSS)
 
-A interface padrão está fixada em `enp8s0`. Ajuste em `config` se necessário:
-
-```json
-"network": {
-    "interface": "sua-interface"
-}
-```
-
-Para descobrir o nome da sua interface: `ip link show`
+A interface é `en*` (curinga): pega a placa cabeada de qualquer máquina (`enp42s0` na workstation,
+`enp8s0` na betavile) sem cair em `docker0`/`tailscale0`. Por isso o `config` é igual em todas.
