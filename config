@@ -47,7 +47,6 @@
     },
 
     "network": {
-        "interface": "en*",
         "format": "󰈁",
         "format-wifi": "󰖩",
         "format-ethernet": "󰈁",

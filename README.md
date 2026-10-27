@@ -165,5 +165,6 @@ O módulo detecta automaticamente o tipo de conexão:
 - `󰖩` — Wi-Fi conectado
 - `󰤭` — Desconectado (ícone fica vermelho via CSS)
 
-A interface é `en*` (curinga): pega a placa cabeada de qualquer máquina (`enp42s0` na workstation,
-`enp8s0` na betavile) sem cair em `docker0`/`tailscale0`. Por isso o `config` é igual em todas.
+Sem `interface` no `config`: o módulo segue a interface da rota padrão. Não use o curinga `en*`:
+a workstation tem duas placas cabeadas (`enp6s0` sem cabo, `enp42s0` ligada) e o curinga pega a
+primeira, mostrando "desconectado" (medido em 2026-10-27). Assim o `config` é igual em todas as máquinas.
