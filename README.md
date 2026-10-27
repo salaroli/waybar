@@ -165,12 +165,6 @@ O módulo detecta automaticamente o tipo de conexão:
 - `󰖩` — Wi-Fi conectado
 - `󰤭` — Desconectado (ícone fica vermelho via CSS)
 
-A interface padrão está fixada em `enp8s0`. Ajuste em `config` se necessário:
-
-```json
-"network": {
-    "interface": "sua-interface"
-}
-```
-
-Para descobrir o nome da sua interface: `ip link show`
+Sem `interface` no `config`: o módulo segue a interface da rota padrão. Não use o curinga `en*`:
+a workstation tem duas placas cabeadas (`enp6s0` sem cabo, `enp42s0` ligada) e o curinga pega a
+primeira, mostrando "desconectado" (medido em 2026-10-27). Assim o `config` é igual em todas as máquinas.
